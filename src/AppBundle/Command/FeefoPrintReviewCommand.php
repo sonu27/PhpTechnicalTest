@@ -28,16 +28,9 @@ class FeefoPrintReviewCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $productId = $input->getArgument('id');
-        $reviewUrl = "http://www.feefo.com/feefo/xmlfeed.jsp?logon=www.amara.co.uk&vendorref=$productId&limit=1";
+        $service   = $this->getContainer()->get('feefo_review');
+        $review    = $service->get($productId);
 
-        $reviews = file_get_contents($reviewUrl);
-
-        $count = [];
-        preg_match('/\\<COUNT\\>([0-9]+)\\<\\/COUNT\\>/i', $reviews, $count);
-
-        $average = [];
-        preg_match('/\\<AVERAGE\\>([0-9]+)\\<\\/AVERAGE\\>/i', $reviews, $average);
-
-        $output->writeln("There are {$count[1]} reviews and the average is {$average[1]}%");
+        $output->writeln("There are {$review['count']} reviews and the average is {$review['average']}%");
     }
 }
