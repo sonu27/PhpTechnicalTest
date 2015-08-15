@@ -29,6 +29,16 @@ class Redis implements CacheInterface
         return $value;
     }
 
+    public function keys($search)
+    {
+        return $this->redis->keys($search);
+    }
+
+    public function del($key)
+    {
+        return $this->redis->del($key);
+    }
+
     public function __call($method, $arguments)
     {
         return call_user_func_array([$this->redis, $method], $arguments);
