@@ -1,7 +1,7 @@
 <?php
-namespace AppBundle\Service;
+namespace Redis;
 
-class Redis implements CacheInterface
+class Client implements CacheInterface
 {
     private $redis;
 

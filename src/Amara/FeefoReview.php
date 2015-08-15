@@ -1,8 +1,6 @@
 <?php
 namespace Amara;
 
-use AppBundle\Service\CacheInterface;
-
 class FeefoReview
 {
     const CACHE_KEY = 'feefo_review';
@@ -11,7 +9,7 @@ class FeefoReview
 
     private $cache;
 
-    public function __construct(CacheInterface $cache)
+    public function __construct(\Redis\CacheInterface $cache)
     {
         $this->cache = $cache;
     }

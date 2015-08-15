@@ -4,7 +4,7 @@
     <service id="feefo_review" class="Amara\FeefoReview">
       <argument type="service" id="redis"/>
     </service>
-    <service id="redis" class="AppBundle\Service\Redis">
+    <service id="redis" class="Redis\Client">
       <argument type="service" id="snc_redis.default"/>
     </service>
   </services>

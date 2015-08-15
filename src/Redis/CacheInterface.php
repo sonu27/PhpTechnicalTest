@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Service;
+namespace Redis;
 
 interface CacheInterface
 {
