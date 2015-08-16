@@ -1,7 +1,7 @@
 <?php
 namespace Redis;
 
-class Client implements CacheInterface
+class Client implements ClientInterface
 {
     private $redis;
 

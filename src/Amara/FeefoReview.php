@@ -9,7 +9,7 @@ class FeefoReview
 
     private $cache;
 
-    public function __construct(\Redis\CacheInterface $cache)
+    public function __construct(\Redis\ClientInterface $cache)
     {
         $this->cache = $cache;
     }

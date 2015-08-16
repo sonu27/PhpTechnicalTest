@@ -1,7 +1,7 @@
 <?php
 namespace Redis;
 
-interface CacheInterface
+interface ClientInterface
 {
     public function getAndSetIfNotExists($key, $function, $ttl = 300);
 
