@@ -29,6 +29,17 @@ class Client implements ClientInterface
         return $value;
     }
 
+    public function deleteAllKeysBeginningWith($prefix)
+    {
+        $keys = $this->redis->keys($prefix.'*');
+
+        foreach ($keys as $key) {
+            $this->redis->del($key);
+        }
+
+        return count($keys);
+    }
+
     public function keys($search)
     {
         return $this->redis->keys($search);

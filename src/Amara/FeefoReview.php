@@ -36,17 +36,6 @@ class FeefoReview
 
     public function deleteAll()
     {
-        $keys = $this->listAllCacheKeys();
-
-        foreach ($keys as $key) {
-            $this->cache->del($key);
-        }
-
-        return count($keys);
-    }
-
-    private function listAllCacheKeys()
-    {
-        return $this->cache->keys(self::CACHE_KEY.'*');
+        return $this->cache->deleteAllKeysBeginningWith(self::CACHE_KEY);
     }
 }
