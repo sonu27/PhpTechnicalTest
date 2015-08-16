@@ -26,10 +26,13 @@ class FeefoReview
     {
         $xml = simplexml_load_file(self::URL.intval($productId));
 
-        $data = [
-            'count'   => $xml->SUMMARY->COUNT->__toString(),
-            'average' => $xml->SUMMARY->AVERAGE->__toString(),
-        ];
+        $data = [];
+        if (isset($xml->SUMMARY->COUNT, $xml->SUMMARY->AVERAGE)) {
+            $data = [
+                'count'   => $xml->SUMMARY->COUNT->__toString(),
+                'average' => $xml->SUMMARY->AVERAGE->__toString(),
+            ];
+        }
 
         return json_encode($data);
     }
