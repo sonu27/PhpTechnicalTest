@@ -28,7 +28,7 @@ class FeefoPrintReviewCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $productId = $input->getArgument('id');
-        $service   = $this->getContainer()->get('feefo_review');
+        $service   = $this->getContainer()->get('feefo.review');
         $review    = $service->get($productId);
 
         $output->writeln("There are {$review['count']} reviews and the average is {$review['average']}%");

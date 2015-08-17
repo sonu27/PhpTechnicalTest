@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
-    <service id="feefo_review" class="Amara\FeefoReview">
-      <argument type="service" id="redis"/>
+    <service id="feefo.api" class="Amara\FeefoApi">
+      <argument type="service" id="http.client"/>
     </service>
+    <service id="feefo.review" class="Amara\FeefoReview">
+      <argument type="service" id="redis"/>
+      <argument type="service" id="feefo.api"/>
+    </service>
+    <service id="http.client" class="GuzzleHttp\Client"/>
     <service id="redis" class="Redis\Client">
       <argument type="service" id="snc_redis.default"/>
     </service>

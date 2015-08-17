@@ -25,7 +25,7 @@ class FeefoClearReviewCacheCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $service   = $this->getContainer()->get('feefo_review');
+        $service   = $this->getContainer()->get('feefo.review');
         $deleted   = $service->deleteAll();
 
         $output->writeln($deleted.' Feefo product review(s) deleted.');
