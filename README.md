@@ -49,3 +49,17 @@ retrieves the reviews.
 
 This will need some sort of database/cache as well, so please include anything
 required to set them up.
+
+Setup cache
+===========
+
+Install Redis 3.0, e.g. for a Centos 7 machine - yum install redis
+
+Problems
+========
+
+Since Feefo isn't providing an actual versioned API, if they make changes to the XML
+structure it could break the app.
+
+Unless they allow providing version info in the accept header, the XML structure
+could change in the future and there isn't away of preventing this.
