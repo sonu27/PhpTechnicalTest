@@ -1,10 +1,10 @@
-Amara's code test
+Code test
 =================
 
 The aim of this code test is to get an idea about how you like to code, and if
 it fits well with how we like to code!
 
-Currently we have a console command which describes the reviews for an Amara
+Currently we have a console command which describes the reviews for an Amar
 product:
 
 app/console feefo:print-reviews 42687
@@ -13,17 +13,17 @@ This should output something like:
 
 "There are 16 reviews and the average is 94%"
 
-Product id 42687 is for a "Vera Kettle", you can see it on the Amara site
+Product id 42687 is for a "Vera Kettle", you can see it on the Amar site
 here:
 
-https://www.amara.com/products/vera-kettle
+https://www.amar.com/products/vera-kettle
 
 Just in case you'd like another id:
 
 42690 is a "Vela Food Blender" (to match the kettle!)
-https://www.amara.com/products/vela-food-blender
+https://www.amar.com/products/vela-food-blender
 
-Those reviews are coming from Feefo who collect customer reviews for Amara.
+Those reviews are coming from Feefo who collect customer reviews for Amar.
 
 The objectives
 ==============
